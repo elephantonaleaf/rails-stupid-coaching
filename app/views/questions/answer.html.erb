@@ -1,0 +1,38 @@
+<style>
+  body {
+    text-align: center;
+  }
+  body p:last-child {
+    color: grey;
+  }
+
+
+</style>
+
+<body>
+  <h1>Questions#answer</h1>
+  <!-- answer.html.erb will display the question you ask your coach as well as his answer. -->
+  <div class="you">
+    <p>"<%= @query %>"</p>
+
+    <p>- You</p>
+  </div>
+
+
+  <div class="coach">
+    <p>
+      <%= if @query == "I am going to work right now!"
+          "That's what I want to hear!"
+      elsif @query.include?("?")
+          "Silly question, son."
+      else
+          "I don't care, my boy!"
+      end %>
+    </p>
+
+    <p> - Your Coach</p>
+
+  </div>
+
+  <%= link_to "Ask another question", ask_path %>
+</body>
